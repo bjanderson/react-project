@@ -1,22 +1,22 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 
-import Home from './components/Home';
-import NotFound from './components/NotFound';
+import { Home, Nav, NotFound } from './components';
 
-export function App() {
+export const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   );
-}
+};
 
-export function WrappedApp() {
+export const WrappedApp = () => {
   return (
     <HashRouter>
+      <Nav />
       <App />
     </HashRouter>
   );
-}
+};
